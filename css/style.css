@@ -1,0 +1,89 @@
+/* Reset */
+
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(207, 33%, 95%);
+}
+
+ul {
+    list-style: none;
+}
+
+p, a, li {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* General Styles */
+
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.container::after, .container::before {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Header */
+
+.logo {
+    float: left;
+    height: 60px;
+}
+
+.logo img {
+    padding: 50% 0;
+}
+
+header {
+    height: 60px;
+}
+
+header nav {
+    float: right;
+}
+
+header nav li {
+    display: inline-block;
+}
+
+header nav a {
+    padding: 21px;
+    display: block;
+    color: hsl(230, 29%, 20%);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Barlow Condensed';
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+header nav li:last-child a {
+    color: hsl(230, 11%, 40%);
+}
+
+header nav li:nth-child(4) {
+    width: 7px;
+    height: 7px;
+    background-color: hsl(231, 7%, 65%);
+    border-radius: 50%;
+    margin: 3px 21px;
+}
+
+/* Attribution */
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
