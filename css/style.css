@@ -7,7 +7,6 @@ body, h1, h2, h3, p, ul, li {
 
 body {
     font-family: Barlow;
-    overflow-x: hidden;
 }
 
 ul {
@@ -89,6 +88,10 @@ header {
 .menu-hamburguer {
     display: none;
     float: right;
+    width: 20px;
+    height: 20px;
+    padding: 24px 0 10px 0;
+    cursor: pointer;
 }
 
 header nav {
@@ -218,6 +221,7 @@ aside {
     float: right;   
     position: relative;
     padding-top: 99px;
+    overflow: hidden;
 }
 
 aside img {
@@ -234,6 +238,7 @@ aside img {
 
 /* Responsive */
 
+
 @media only screen and (max-width: 1280px) {
 
     .container {
@@ -244,18 +249,28 @@ aside img {
         margin: 0 0 0 60px;
     }
 
+    /* Aside */
+
     aside {
         min-width: 49.8%;
     }
+
+    aside img {
+        width: initial;
+    }
 }
 
-@media only screen and (max-width: 1070px) {
+@media only screen and (max-width: 1073px) {
+
+    body > div::before {
+        width: 49.9%;
+    }
 
     /* Body */
 
     body > div::before {
         height: 775px;
-        width: 60.9%;
+        width: 50.9%;
     }
 
     .container-right {
@@ -269,17 +284,55 @@ aside img {
     }
 
     header nav {
-        display: none;
+        height: 0;
+        transition: height .6s;
+        position: absolute;
+        width: 311px;
+        left: 50%;
+        top: 256px;
+        background-color: #FFF;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 999;
+        box-shadow: 0 0 2px 0 rgba(0,0,0,0.14),
+		0 2px 2px 0 rgba(0,0,0,0.12),
+        0 1px 3px 0 rgba(0,0,0,0.20);
+        overflow: hidden;
+    }
+
+    header nav li:nth-child(4) {
+        margin: 3px auto;
+        width: 263px;
+        height: 1px;
+    }
+
+    header nav li {
+        display: block;
+    }
+
+    header nav::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .open {
+        height: 251px;
+        overflow: auto;
     }
 
     /* Main, Aside */
 
     .main {
         margin-left: 60px;
+        padding-bottom: 93px;
     }
 
     aside {
         margin-left: 14px;
+        height: initial;
+    }
+
+    aside img {
+        position: inherit;
     }
 
     .main, aside {
@@ -293,5 +346,113 @@ aside img {
     .attribution {
         position: relative;
     }
-    /* fonte 40px */
+}
+
+@media only screen and (max-width: 729px) {
+
+    .container {
+        margin: 0px 30px;
+    }
+
+    h1 {
+        font-size: 40px;
+        max-width: 358px;
+    }
+
+    /* Aside */
+
+    aside img {
+        width: 137.6%;
+    }
+
+
+    /* Main */
+
+    .info {
+        padding-top: 60px;
+        padding-bottom: 29px;
+        padding-bottom: 15px;
+    }
+
+    h1 {
+        margin-bottom: 16px;
+    }
+
+    .main {
+        margin-left: 30px;
+    }
+
+    .main > p {
+        margin-bottom: 26px;
+    }
+    
+}
+
+@media only screen and (max-width:414px) {
+    body > div::before {
+        height: 530px;
+        width: 49.9%;
+    }
+
+    .info {
+        padding-top: 87px;
+    }
+
+    .button_2, .button_1 {
+        font-size: 14px;
+    }
+
+    .button_1 {
+        letter-spacing: 0.1em;
+        width: 153px;
+    }
+
+    .button_2 {
+        width: 133px;
+        box-sizing: content-box;
+        padding: 0;
+        padding-left: 21px;
+    }
+
+    .attribution {
+        max-width: 300px;
+        text-align: center;
+        margin: 0 auto;
+        line-height: 1.7em;
+    }
+}
+
+@media only screen and (max-width:375px) {
+    body > div::before {
+        height: 504px;
+    }   
+}
+
+@media only screen and (max-width: 370px) {
+
+    .container {
+        margin: 0px 15px;
+    }
+
+    h1 {
+        font-size: 37px;
+    }
+
+    .main {
+        margin: 0 15px;
+    }
+
+    .button_2, .button_1 {
+        display: block;
+        padding: 0;
+    }
+
+    .button_2 {
+        margin-top: 10px;
+        padding: 0 9px;
+    }
+
+    aside {
+        margin-left: -5px;
+    }
 }
