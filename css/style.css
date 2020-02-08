@@ -69,6 +69,12 @@ body > div::before {
     } 
 }
 
+@media only screen and (max-width: 1920px) and (min-width: 1400px) {
+    body > div {
+        height: 100vh;
+    } 
+}
+
 /* Header */
 
 .logo {
@@ -200,11 +206,10 @@ button {
 }
 
 .button_2 {
-    width: 192px;
+    width: 220px;
     letter-spacing: 0.2em;
     color: hsl(231, 7%, 65%);
     font-size: 16px;
-    padding: 0 21px;
     font-family: "Barlow Condensed";
 }
 
